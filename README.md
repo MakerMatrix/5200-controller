@@ -1,4 +1,12 @@
-# Scott's Atari 5200 Controller
+# Maker Matrix -  Fork of Scott Baker's Atari 5200 Controller Firmware
+
+I'll be working on adding the following features to the firmware:
+- Non-linear stick response for more subtle movements near center
+- Calibration routine that utilizes a correction in EEPROM
+
+Original README.md below
+------------------------------------------------------------------------------------------------
+
 smbaker@smbaker.com 
 http://www.smbaker.com/
 
