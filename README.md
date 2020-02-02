@@ -1,4 +1,4 @@
-# Maker Matrix -  Fork of Scott Baker's Atari 5200 Controller Firmware
+# MakerMatrix Fork of Scott Baker's Atari 5200 Controller Firmware
 
 I'll be working on adding the following features to the firmware:
 - Non-linear stick response for more subtle movements near center
