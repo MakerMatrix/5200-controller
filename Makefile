@@ -13,7 +13,7 @@ AVRDUDE = avrdude $(PROGRAMMER) -p $(DEVICE)
 COMPILE = avr-gcc -Wall -Os -DF_CPU=$(CLOCK) -mmcu=$(DEVICE)
 
 # symbolic targets:
-all:	5200controller.hex digipot-cycle.hex
+all:	5200controller.hex
 
 .c.o:
 	$(COMPILE) -c $< -o $@
@@ -38,7 +38,7 @@ load: all
 	bootloadHID 5200controller.hex
 
 clean:
-	rm -f 5200controller.hex 5200controller.elf digipot-cycle.hex digipot-cycle.elf
+	rm -f 5200controller.hex 5200controller.elf
 
 # file targets:
 5200controller.elf: 5200controller.c
@@ -49,19 +49,3 @@ clean:
 	avr-objcopy -j .text -j .data -O ihex 5200controller.elf 5200controller.hex
 #	avr-size --format=avr --mcu=$(DEVICE) 5200controller.elf
 	avr-size 5200controller.elf
-
-digipot-cycle.elf: digipot-cycle.c
-	$(COMPILE) -o digipot-cycle.elf digipot-cycle.c
-
-digipot-cycle.hex: digipot-cycle.elf
-	rm -f digipot-cycle.hex
-	avr-objcopy -j .text -j .data -O ihex digipot-cycle.elf digipot-cycle.hex
-#       avr-size --format=avr --mcu=$(DEVICE) digipot-cycle.elf
-	avr-size digipot-cycle.elf
-
-# Targets for code debugging and analysis:
-disasm:	5200controller.elf
-	avr-objdump -d 5200controller.elf
-
-cpp:
-	$(COMPILE) -E 5200controller.c

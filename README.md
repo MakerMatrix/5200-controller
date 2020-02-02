@@ -4,7 +4,8 @@ Development Branch
 
 I'll be working on adding the following features to the firmware:
 - Non-linear stick response for more subtle movements near center
-- Calibration routine that utilizes a correction in EEPROM
+- Calibration routine that utilizes a correction in EEPROM, possibly set by the config button
+in conjunction with centering the joystick using Pete's Test Cartridge as a reference.
 
 Original README.md below
 ------------------------------------------------------------------------------------------------
